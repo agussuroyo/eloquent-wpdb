@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ruleset name="agussuroyo">
+    <arg name="parallel" value="4" />
+
+    <config name="testVersion" value="7.4-" />
+
+    <file>src/</file>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/src/Fake*</exclude-pattern>
+    <rule ref="PSR12" />
+</ruleset>
