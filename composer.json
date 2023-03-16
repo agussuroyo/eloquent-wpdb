@@ -2,6 +2,9 @@
     "name": "agussuroyo/eloquent-wpdb",
     "description": "$wpdb that wrapped with Eloquent from Laravel",
     "type": "library",
+    "license": [
+        "MIT"
+    ],
     "autoload": {
         "psr-4": {
             "Agussuroyo\\EloquentWpdb\\": "src/"
