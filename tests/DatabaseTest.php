@@ -10,7 +10,7 @@ class DatabaseTest extends TestCase
         $this->expectExceptionMessage('No DB_HOST defined.');
 
         $db = new \Agussuroyo\EloquentWpdb\DB();
-        $db->run();
+        $db->capsule();
     }
 
     public function testSimulateConstants()
@@ -29,7 +29,7 @@ class DatabaseTest extends TestCase
         }
 
         $db = new \Agussuroyo\EloquentWpdb\DB();
-        $db->run();
+        $db->capsule();
     }
 
     public function testSimulateConstantsAndWpdb()
@@ -48,7 +48,7 @@ class DatabaseTest extends TestCase
         $GLOBALS['wpdb'] = new \Agussuroyo\EloquentWpdb\FakeWpdb();
 
         $db = new \Agussuroyo\EloquentWpdb\DB();
-        $manager = $db->run();
+        $manager = $db->capsule();
         $this->assertInstanceOf(\Illuminate\Database\Capsule\Manager::class, $manager);
 
         $connection = $manager->getConnection();

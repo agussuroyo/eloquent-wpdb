@@ -23,7 +23,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
         $GLOBALS['wpdb'] = new \Agussuroyo\EloquentWpdb\FakeWpdb();
 
         $db = new \Agussuroyo\EloquentWpdb\DB();
-        $this->manager = $db->run();
+        $this->manager = $db->capsule();
         $this->db = $this->manager->getConnection();
     }
 

@@ -10,7 +10,7 @@ class DB
      * @return Manager
      * @throws \Exception
      */
-    public function run()
+    public function capsule()
     {
         // I'm not really sure this check is required or not, but the constants is used on the addConnection
         $constants = [
