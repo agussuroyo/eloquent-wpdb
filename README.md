@@ -6,20 +6,31 @@
 - I do not guarantee anything for the use of this software
 - Do It With Your Own Risk
 
+# Installation
+
+Using composer
+```bash
+composer require agussuroyo/eloquent-wpdb
+```
+
 # Usage
 
+Boot it first
 ```php
 $db = new \Agussuroyo\EloquentWpdb\DB();
 $capsule = $db->capsule();
+```
 
-// 1. manual query builder
+then do manual query builder
+```php
+// query builder
 $con = $capsule->getConnection();
 $con->from('tableName')->get();
+```
 
-// or 
-
-// 2. model based
-
+or model based query
+```php
+// model based
 class ModelName extends Illuminate\Database\Eloquent\Model
 {
     
