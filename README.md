@@ -25,7 +25,7 @@ then do manual query builder
 ```php
 // query builder
 $con = $capsule->getConnection();
-$con->from('tableName')->get();
+$con->table('tableName')->get();
 ```
 
 or model based query
