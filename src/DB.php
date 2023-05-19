@@ -7,10 +7,11 @@ use Illuminate\Database\Capsule\Manager;
 class DB
 {
     /**
+     * @param callable|null $callable
      * @return Manager
      * @throws \Exception
      */
-    public function capsule()
+    public function capsule($callable = null)
     {
         // I'm not really sure this check is required or not, but the constants is used on the addConnection
         $constants = [
@@ -48,6 +49,9 @@ class DB
             'charset' => DB_CHARSET, // @phpstan-ignore-line
             'prefix' => ''
         ]);
+        if ($callable !== null) {
+            $callable($capsule);
+        }
         $capsule->setAsGlobal();
         $capsule->bootEloquent();
 
