@@ -42,10 +42,10 @@ class Connection extends MySqlConnection
      * @param array $bindings
      * @return array
      */
-    public function wpBindingsToType($bindings)
+    public function wpBindingsToType(&$bindings)
     {
         $types = [];
-        foreach ($bindings as $binding) {
+        foreach ($bindings as $key => $binding) {
             switch (gettype($binding)) {
                 case 'boolean':
                     $types[] = '%f';
@@ -54,6 +54,11 @@ class Connection extends MySqlConnection
                 case 'double':
                 case 'float':
                     $types[] = '%d';
+                    break;
+                // handle null & need to remove binding
+                case 'NULL':
+                    $types[] = 'NULL';
+                    unset($bindings[$key]);
                     break;
                 default:
                     $types[] = '%s';
