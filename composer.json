@@ -1,7 +1,6 @@
 {
     "name": "agussuroyo/eloquent-wpdb",
     "description": "$wpdb that wrapped with Eloquent from Laravel",
-    "version": "1.0.0",
     "type": "library",
     "license": [
         "MIT"
