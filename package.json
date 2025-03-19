@@ -1,0 +1,9 @@
+{
+  "name": "agussuroyo-eloquent-wpdb",
+  "description": "$wpdb that wrapped with Eloquent from Laravel",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "semantic-release": "^24.2.3"
+  }
+}
